@@ -27,7 +27,7 @@ namespace nc
 		m_width = width;
 		m_height = height;
 
-		m_window = SDL_CreateWindow(title.c_str(), 100, 100, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+		m_window = SDL_CreateWindow(title.c_str(), 100, 100, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 		
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
@@ -40,6 +40,8 @@ namespace nc
 
 		m_context = SDL_GL_CreateContext(m_window);
 		gladLoadGL();
+
+		glViewport(0, 0, width, height);
 
 	}
 
