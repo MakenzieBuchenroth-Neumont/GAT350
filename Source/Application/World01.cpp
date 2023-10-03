@@ -21,17 +21,23 @@ namespace nc
     void World01::Draw(Renderer& renderer)
     {
         // pre-render
-        renderer.SetColor(0, 0, 0, 0);
         renderer.BeginFrame();
 
         // render
-        //renderer.SetColor(255, 255, 255, 255);
-        //renderer.DrawPoint(random(renderer.GetWidth()), random(renderer.GetHeight()));
+        glBegin(GL_TRIANGLES);
 
-        for (int i = 0; i < 100000; i++) {
-            renderer.SetColor(random(256), random(256), random(256), 255);
-            renderer.DrawPoint(random(renderer.GetWidth()), random(renderer.GetHeight()));
-        }
+        glColor3f(1, 0, 0);
+        glVertex2f(-0.5f, -0.5f);
+
+        glColor3f(0, 1, 0);
+        glVertex2f(0, 0.5f);
+
+        glColor3f(0, 0, 1);
+        glVertex2f(0.5f, -0.5f);
+
+
+
+        glEnd();
 
         // post-render
         renderer.EndFrame();
