@@ -10,7 +10,7 @@ namespace nc
         m_program = GET_RESOURCE(Program, "Shaders/unlit_texture.prog");
         m_program->Use();
 
-        m_texture = GET_RESOURCE(Texture, "Textures/llama.jpg");
+        m_texture = GET_RESOURCE(Texture, "Textures/uv.png");
         m_texture->bind();
         m_texture->setActive(GL_TEXTURE0);
 
@@ -70,8 +70,8 @@ namespace nc
         m_transform.position.z += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_W) ? m_speed * -dt * 2 : 0;
         m_time += dt;
         
-        m_program->SetUniform("offset", glm::vec2{ m_time, 0 });
-        m_program->SetUniform("tiling", glm::vec2{ 5, 5 });
+        m_program->SetUniform("offset", glm::vec2{ 0, 0 });
+        m_program->SetUniform("tiling", glm::vec2{ 1, 1 });
         // model matrix
         //glm::mat4 position = glm::translate(glm::mat4{ 1 }, m_position);
         //glm::mat4 rotation = glm::rotate(glm::mat4{ 1 }, glm::radians(m_angle), glm::vec3{ 0, 0, 1 });
