@@ -6,6 +6,7 @@
 #include "Shader.h"
 #include "Program.h"
 #include "Gui.h"
+#include "Material.h"
 #include "VertexBuffer.h"
 
 #include <glad/include/glad/glad.h>
