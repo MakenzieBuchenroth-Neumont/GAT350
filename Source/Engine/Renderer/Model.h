@@ -23,15 +23,15 @@ namespace nc
 
 	public:
 		bool Create(std::string filename, ...) override;
-		bool Load(const std::string& filename);
+		bool Load(const std::string& filename, const glm::vec3& translate = glm::vec3(0), const glm::vec3& rotate = glm::vec3(0), const glm::vec3& scale = glm::vec3(1));
 		void Draw(GLenum primitive = GL_TRIANGLES);
 
 		void SetMaterial(res_t<Material> material) { m_material = material; }
 		res_t<Material> GetMaterial() { return m_material; }
 
 	private:
-		void ProcessNode(aiNode* node, const aiScene* scene);
-		void ProcessMesh(aiMesh* mesh, const aiScene* scene);
+		void ProcessNode(aiNode* node, const aiScene* scene, const glm::mat4& transform);
+		void ProcessMesh(aiMesh* mesh, const aiScene* scene, const glm::mat4& transform);
 
 	private:
 		res_t<VertexBuffer> m_vertexBuffer;

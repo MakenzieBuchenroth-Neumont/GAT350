@@ -8,10 +8,10 @@ namespace nc
 {
     bool World04::Initialize() {
 
-        auto material = GET_RESOURCE(Material, "materials/foxy.mtrl");
+        auto material = GET_RESOURCE(Material, "materials/grid.mtrl");
         m_model = std::make_shared<Model>();
         m_model->SetMaterial(material);
-        m_model->Load("models/foxy.obj");
+        m_model->Load("models/buddha.obj", glm::vec3{ 0 }, glm::vec3{ -90, 0, 0 });
 
         return true;
     }
@@ -40,8 +40,6 @@ namespace nc
         ImGui::ColorEdit3("Diffuse Color", &lightColor[0], 0.1f);
         ImGui::End();
 
-        //m_transform.rotation.z += 180 * dt;
-
         m_transform.position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_D) ? m_speed * +dt * 2 : 0;
         m_transform.position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A) ? m_speed * -dt * 2 : 0;
         m_transform.position.z += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_S) ? m_speed * +dt * 2 : 0;
@@ -57,7 +55,7 @@ namespace nc
         material->GetProgram()->SetUniform("view", view);
 
         // projection matrix
-        glm::mat4 projection = glm::perspective(glm::radians(70.0f), 800.0f / 600.0f, 0.01f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)ENGINE.GetSystem<Renderer>()->GetWidth() / ENGINE.GetSystem<Renderer>()->GetHeight(), 0.01f, 100.0f);
         material->GetProgram()->SetUniform("projection", projection);
 
         // add light vector and gui
