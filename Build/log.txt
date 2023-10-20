@@ -1,1 +1,3 @@
 INFO: Main.cpp(13) Initialize Engine...
+WARNING: Program.cpp(165) Could not find uniform location: material.tiling
+WARNING: Program.cpp(165) Could not find uniform location: material.offset

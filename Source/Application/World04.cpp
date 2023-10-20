@@ -8,10 +8,11 @@ namespace nc
 {
     bool World04::Initialize() {
 
-        auto material = GET_RESOURCE(Material, "materials/grid.mtrl");
+        auto material = GET_RESOURCE(Material, "materials/foxy.mtrl");
         m_model = std::make_shared<Model>();
         m_model->SetMaterial(material);
-        m_model->Load("models/buddha.obj", glm::vec3{ 0 }, glm::vec3{ -90, 0, 0 });
+        m_model->Load("models/foxy.obj", glm::vec3{ 0, -1.5, 0}, glm::vec3{ 8, 0, 0 }, glm::vec3{ 0.5, 0.5, 0.5});
+        //m_model->Load("models/sphere.obj");
 
         return true;
     }
@@ -61,7 +62,7 @@ namespace nc
         // add light vector and gui
         material->GetProgram()->SetUniform("light.position", lightPosition);
         material->GetProgram()->SetUniform("light.ambientColor", ambientColor);
-        material->GetProgram()->SetUniform("light.color", lightColor);
+        material->GetProgram()->SetUniform("light.diffuseColor", lightColor);
 
 
         ENGINE.GetSystem<Gui>()->EndFrame();
