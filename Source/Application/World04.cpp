@@ -70,7 +70,7 @@ namespace nc
         material->GetProgram()->SetUniform("light.color", m_light.color);
         material->GetProgram()->SetUniform("light.cutoff", glm::radians(m_light.cutoff));
 
-        material->GetProgram()->SetUniform("ambientColor", ambientColor);
+        material->GetProgram()->SetUniform("ambientLight", ambientColor);
 
         // model matrix
         material->GetProgram()->SetUniform("model", m_transform.GetMatrix());
