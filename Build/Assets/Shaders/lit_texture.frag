@@ -1,5 +1,9 @@
 #version 430
 
+#define POINT		0
+#define DIRECTIONAL 1
+#define SPOT		2
+
 //in layout(location = 0) vec3 color;
 in layout(location = 0) vec3 fposition;
 in layout(location = 1) vec3 fnormal;
@@ -16,35 +20,53 @@ uniform struct Material {
 } material;
 
 uniform struct Light {
+	int type;
 	vec3 position;
-	vec3 ambientColor;
-	vec3 diffuseColor;
+	vec3 direction;
+	vec3 color;
+	float cutoff;
 } light;
+
+uniform vec3 ambientLight;
 
 layout(binding = 0) uniform sampler2D tex;
 
-
-void main()
-{
-	// ambient
-	vec3 ambient = light.ambientColor;
+vec3 ads(in vec3 position, in vec3 normal) {
+	//ambient
+	vec3 ambient = ambientLight;
 
 	// diffuse
-	vec3 lightDir = normalize(light.position - fposition);
+	vec3 lightDir = (light.type == DIRECTIONAL) ? normalize(-light.direction) : normalize(light.position - fposition);
+
+	float spotIntensity = 1;
+	if (light.type == SPOT) {
+		float angle = acos(dot(light.direction, -lightDir));
+		if (angle > light.cutoff) spotIntensity = 0;
+	}
+
 	float intensity = max(dot(lightDir, fnormal), 0);
-	vec3 diffuse = material.diffuse * (light.diffuseColor * intensity);
+	vec3 diffuse = material.diffuse * (light.color * intensity * spotIntensity);
+
+
 
 	// specular
+	vec3 specular = vec3(0);
+	if (intensity > 0) {
+
 	vec3 viewDir = normalize(-fposition);
 	vec3 reflectDir = reflect(-lightDir, fnormal);
 	float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-	vec3 specular = material.specular * light.diffuseColor * spec;
-	
+	vec3 specular = material.specular * intensity;
+}
+
+return ambient + diffuse + specular;
+
+}
+
+void main()
+{
 	// texture and lighting
 	vec4 texcolor = texture(tex, ftexcoord);
 
-	vec3 lighting = ambient + diffuse + specular;
-	vec3 color = lighting * texcolor.rgb;
-
-	ocolor = vec4(color, 1.0);
+	ocolor = texcolor * vec4(ads(fposition, fnormal), 1);
 }

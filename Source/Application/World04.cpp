@@ -8,11 +8,18 @@ namespace nc
 {
     bool World04::Initialize() {
 
-        auto material = GET_RESOURCE(Material, "materials/foxy.mtrl");
+        auto material = GET_RESOURCE(Material, "materials/grid.mtrl");
         m_model = std::make_shared<Model>();
         m_model->SetMaterial(material);
-        m_model->Load("models/foxy.obj", glm::vec3{ 0, -1.5, 0}, glm::vec3{ 8, 0, 0 }, glm::vec3{ 0.5, 0.5, 0.5});
-        //m_model->Load("models/sphere.obj");
+        m_model->Load("models/plane.obj");
+        m_transform.position.y = -1;
+        //m_model->Load("models/foxy.obj", glm::vec3{ 0, -1.5, 0}, glm::vec3{ 8, 0, 0 }, glm::vec3{ 0.5, 0.5, 0.5});
+
+        m_light.type = light_t::eType::Point;
+        m_light.position = glm::vec3{ 0, 5, 0 };
+        m_light.direction = glm::vec3{ 0, -1, 0 };
+        m_light.color = glm::vec3{ 1, 1, 1 };
+        m_light.cutoff = 30.0f;
 
         return true;
     }
@@ -25,10 +32,6 @@ namespace nc
         ENGINE.GetSystem<Gui>()->BeginFrame();
 
 
-        auto material = m_model->GetMaterial();
-        material->processGui();
-        material->Bind();
-
         ImGui::Begin("Transform");
         ImGui::DragFloat3("Position", &m_transform.position[0], 0.1f);
         ImGui::DragFloat3("Rotation", &m_transform.rotation[0], 0.1f);
@@ -36,9 +39,16 @@ namespace nc
         ImGui::End();
 
         ImGui::Begin("Lighting");
-        ImGui::DragFloat3("Position", &lightPosition[0], 0.1f);
+
+        const char* types[] = {"Point", "Directional", "Spot"};
+        ImGui::Combo("Type", (int*)(& m_light.type), types, 3);
+
+        if (m_light.type != light_t::Directional) ImGui::DragFloat3("Position", &m_light.position[0], 0.1f);
+        if (m_light.type != light_t::Point) ImGui::DragFloat3("Direction", &m_light.direction[0], 0.1f);
+        if (m_light.type == light_t::Spot) ImGui::DragFloat("Cutoff", &m_light.cutoff, 1.0f, 0.0f, 90.0f);
+
         ImGui::ColorEdit3("Ambient Color", &ambientColor[0], 0.1f);
-        ImGui::ColorEdit3("Diffuse Color", &lightColor[0], 0.1f);
+        ImGui::ColorEdit3("Diffuse Color", &m_light.color[0], 0.1f);
         ImGui::End();
 
         m_transform.position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_D) ? m_speed * +dt * 2 : 0;
@@ -47,6 +57,20 @@ namespace nc
         m_transform.position.z += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_W) ? m_speed * -dt * 2 : 0;
 
         m_time += dt;
+
+        auto material = m_model->GetMaterial();
+        material->processGui();
+        material->Bind();
+
+        // add light vector and gui
+
+        material->GetProgram()->SetUniform("light.type", m_light.type);
+        material->GetProgram()->SetUniform("light.position", m_light.position);
+        material->GetProgram()->SetUniform("light.direction", m_light.direction);
+        material->GetProgram()->SetUniform("light.color", m_light.color);
+        material->GetProgram()->SetUniform("light.cutoff", glm::radians(m_light.cutoff));
+
+        material->GetProgram()->SetUniform("ambientColor", ambientColor);
 
         // model matrix
         material->GetProgram()->SetUniform("model", m_transform.GetMatrix());
@@ -59,10 +83,6 @@ namespace nc
         glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)ENGINE.GetSystem<Renderer>()->GetWidth() / ENGINE.GetSystem<Renderer>()->GetHeight(), 0.01f, 100.0f);
         material->GetProgram()->SetUniform("projection", projection);
 
-        // add light vector and gui
-        material->GetProgram()->SetUniform("light.position", lightPosition);
-        material->GetProgram()->SetUniform("light.ambientColor", ambientColor);
-        material->GetProgram()->SetUniform("light.diffuseColor", lightColor);
 
 
         ENGINE.GetSystem<Gui>()->EndFrame();

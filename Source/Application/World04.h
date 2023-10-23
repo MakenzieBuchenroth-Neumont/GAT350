@@ -4,10 +4,24 @@
 #include "Core/Math/Transform.h"
 #include <vector>
 
-namespace nc
-{
-	class World04 : public World
-	{
+namespace nc {
+
+	struct light_t {
+
+		enum eType {
+			Point,
+			Directional,
+			Spot
+		};
+
+		eType type;
+		glm::vec3 position;
+		glm::vec3 direction;
+		glm::vec3 color;
+		float cutoff;
+	};
+
+	class World04 : public World {
 	public:
 		bool Initialize() override;
 		void Shutdown() override;
@@ -21,8 +35,8 @@ namespace nc
 
 		Transform m_transform;
 		res_t<Model> m_model;
-		glm::vec3 lightPosition = { 0, 8, 0 };
-		glm::vec3 lightColor = { 1, 1, 1 };
+		
+		light_t m_light;
 		glm::vec3 ambientColor = { 0.2, 0.2, 0.2 };
 	};
 }
