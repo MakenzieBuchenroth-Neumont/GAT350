@@ -72,6 +72,18 @@ namespace nc
 		components.push_back(std::move(component));
 	}
 
+	void Actor::processGui() {
+		ImGui::Text("Name: %s", name.c_str());
+		ImGui::Text("Tag: %s", tag.c_str());
+		ImGui::Checkbox("Active", &active);
+		ImGui::Separator();
+		transform.processGui();
+		for (auto& component : components) {
+			ImGui::Separator();
+			component->processGui();
+		}
+	}
+
 	void Actor::Read(const json_t& value)
 	{
 		Object::Read(value);
