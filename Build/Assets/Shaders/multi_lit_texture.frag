@@ -68,25 +68,6 @@ float attenuation(in vec3 position1, in vec3 position2, in float range)
 	return attenuation;
 }
 
-/*
-vec3 ads(in vec3 position, in vec3 normal) {
-	//ambient
-	vec3 ambient = ambientLight;
-
-	// attenuation
-	float attenuation = 1;
-	if (light.type != DIRECTIONAL) {
-		float distanceSqr = dot(light.position - position, light.position - position);
-		float rangeSqr = light.range * light.range;
-		attenuation = max(0, 1 - pow((distanceSqr / rangeSqr), 2.0));
-		attenuation = attenuation * attenuation;
-	}
-
-return ambient + (diffuse + specular) * light.intensity * attenuation;
-
-}
-*/
-
 void main()
 {
 	// texture and lighting

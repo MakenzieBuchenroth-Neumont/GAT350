@@ -10,7 +10,10 @@ namespace nc
     bool World05::Initialize() {
 
         m_scene = std::make_unique<Scene>();
+        m_scene->Load("Scenes/scene.json");
+        m_scene->Initialize();
 
+        /*
         {
             auto actor = CREATE_CLASS(Actor);
             actor->name = "actor1";
@@ -22,6 +25,19 @@ namespace nc
             actor->AddComponent(std::move(modelComponent));
             m_scene->Add(std::move(actor));
         }
+
+        {
+            auto actor = CREATE_CLASS(Actor);
+            actor->name = "actor2";
+            actor->transform.position = glm::vec3{ 0, 0, 0 };
+            auto modelComponent = CREATE_CLASS(ModelComponent);
+            modelComponent->model = std::make_shared<Model>();
+            modelComponent->model->SetMaterial(GET_RESOURCE(Material, "materials/foxy.mtrl"));
+            modelComponent->model->Load("models/foxy.obj", glm::vec3{ 0, 0, 0 }, glm::vec3{ 0 }, glm::vec3{ 0 });
+            actor->AddComponent(std::move(modelComponent));
+            m_scene->Add(std::move(actor));
+        }
+        */
 
         {
             auto actor = CREATE_CLASS(Actor);
@@ -49,7 +65,7 @@ namespace nc
         ENGINE.GetSystem<Gui>()->BeginFrame();
 
         m_scene->Update(dt);
-        //m_scene->processGui();
+        m_scene->processGui();
 
         auto actor = m_scene->GetActorByName<Actor>("actor1");
 
