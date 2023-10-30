@@ -19,6 +19,7 @@ uniform struct Material {
 	vec2 offset;
 } material;
 
+
 uniform struct Light {
 	int type;
 	vec3 position;

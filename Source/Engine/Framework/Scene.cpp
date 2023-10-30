@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "Framework/Components/LightComponent.h"
+#include "Framework/Components/CameraComponent.h"
 
 namespace nc
 {
@@ -23,6 +24,18 @@ namespace nc
 
 	void Scene::Draw(Renderer& renderer)
 	{
+		// get camera component
+		CameraComponent* camera = nullptr;
+		for (auto& actor : m_actors)
+		{
+			if (!actor->active) continue;
+
+			camera = actor->GetComponent<CameraComponent>(); //<get camera component from actor>
+			if (camera) { //<if camera is valid, break out of for loop>
+				break;
+			}
+		}
+
 		// get light components
 		std::vector<LightComponent*> lights;
 		for (auto& actor : m_actors) {
@@ -57,7 +70,6 @@ namespace nc
 		for (auto& actor : m_actors) {
 			if (actor->active) actor->Draw(renderer);
 		}
-
 	}
 
 	void Scene::Add(std::unique_ptr<Actor> actor)
@@ -138,5 +150,4 @@ namespace nc
 		}
 		ImGui::End();
 	}
-
 }

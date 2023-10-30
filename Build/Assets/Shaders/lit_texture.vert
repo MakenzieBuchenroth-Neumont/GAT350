@@ -19,7 +19,6 @@ uniform struct Material {
 	vec2 tiling;
 	vec2 offset;
 } material;
-
 void main() {
 	// get into mvp format
 	mat4 modelView = view * model;

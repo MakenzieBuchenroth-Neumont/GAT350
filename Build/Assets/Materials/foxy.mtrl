@@ -1,5 +1,5 @@
 {
-  "program":"shaders/lit_texture.prog",
+  "program":"shaders/multi_lit_texture.prog",
   "textures": [ "textures/foxy.png" ],
   "color":[
       1,
