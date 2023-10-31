@@ -4,32 +4,55 @@
 #include <glm/glm/gtc/type_ptr.hpp>
 #include <glm/glm/gtx/color_space.hpp>
 
+#include <iostream>
+
 
 namespace nc
 {
     bool World05::Initialize() {
+
+        std::string one = ToUpper("hellO world");
+        std::string two = ToLower("GoODByE");
+
+        std::cout << one << "\n";
+        std::cout << two << "\n";
+
+        std::string three = "Hello World";
+        std::string four = "Hello World";
+
+        std::cout << IsEqualIgnoreCase(three, four) << "\n";
+
+        std::string five = "Goodbye";
+        std::string six = "Hello World";
+
+        std::cout << IsEqualIgnoreCase(five, six) << "\n";
+
+        std::string seven = "Seven";
+        std::string eight = "Eight";
+
+        std::cout << CreateUnique(seven) << "\n";
+        std::cout << CreateUnique(eight) << "\n";
+        
 
         m_scene = std::make_unique<Scene>();
         m_scene->Load("Scenes/scene.json");
         m_scene->Initialize();
 
         // CAMERA
-        {
-            auto actor = CREATE_CLASS(Actor);
-            actor->name = "camera1";
-            actor->transform.position = glm::vec3{ 0, 0, 18 };
-            actor->transform.rotation = glm::vec3{ 0, 180, 0 };
+        //{
+        //    auto actor = CREATE_CLASS(Actor);
+        //    actor->name = "camera1";
+        //    actor->transform.position = glm::vec3{ 0, 0, 18 };
+        //    actor->transform.rotation = glm::vec3{ 0, 180, 0 };
 
 
 
-            auto cameraComponent = CREATE_CLASS(CameraComponent);
-            cameraComponent->SetPerspective(70.0f, (float)ENGINE.GetSystem<Renderer>()->GetWidth() / (float)ENGINE.GetSystem<Renderer>()->GetHeight(), 0.1f, 100.0f);
-            actor->AddComponent(std::move(cameraComponent));
+        //    auto cameraComponent = CREATE_CLASS(CameraComponent);
+        //    cameraComponent->SetPerspective(70.0f, (float)ENGINE.GetSystem<Renderer>()->GetWidth() / (float)ENGINE.GetSystem<Renderer>()->GetHeight(), 0.1f, 100.0f);
+        //    actor->AddComponent(std::move(cameraComponent));
 
-
-
-            m_scene->Add(std::move(actor));
-        }
+        //    m_scene->Add(std::move(actor));
+        //}
 
         /*
         {
@@ -63,7 +86,7 @@ namespace nc
             actor->transform.position = glm::vec3{ 3, 3, 3 };
             auto lightComponent = CREATE_CLASS(LightComponent);
             lightComponent->type = LightComponent::eType::Point;
-            lightComponent->color = glm::rgbColor(glm::vec3{ randomf() * 360, 1, 1 });
+            lightComponent->color = glm::rgbColor(glm::vec3{ 1,1,1 }); //glm::rgbColor(glm::vec3{ randomf() * 360, 1, 1 });
             lightComponent->intensity = 1;
             lightComponent->range = 20;
             lightComponent->innerAngle = 10.0f;

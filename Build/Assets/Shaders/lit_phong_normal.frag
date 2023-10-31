@@ -11,8 +11,8 @@
 
 //in layout(location = 0) vec3 color;
 in layout(location = 0) vec3 fposition;
-in layout(location = 1) vec3 fnormal;
-in layout(location = 2) vec2 ftexcoord;
+in layout(location = 1) vec2 ftexcoord;
+in layout(location = 2) mat3 ftbn;
 
 out layout(location = 0) vec4 ocolor;
 
@@ -55,13 +55,13 @@ void phong(in Light light, in vec3 position, in vec3 normal, out vec3 diffuse, o
 		spotIntensity = smoothstep(light.outerAngle + 0.001, light.innerAngle, angle);
 	}
 
-	float intensity = max(dot(lightDir, fnormal), 0) * spotIntensity;
+	float intensity = max(dot(lightDir, normal), 0) * spotIntensity;
 	diffuse = (light.color * intensity);
 
 	// specular
 	specular = vec3(0);
 	if (intensity > 0) {
-		vec3 reflectDir = reflect(-lightDir, fnormal);
+		vec3 reflectDir = reflect(-lightDir, normal);
 		vec3 viewDir = normalize(-fposition);
 		float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
 		specular = vec3(intensity * spotIntensity);
@@ -93,7 +93,12 @@ void main()
  
 		float attenuation = (lights[i].type == DIRECTIONAL) ? 1 : attenuation(lights[i].position, fposition, lights[i].range);
  
-		phong(lights[i], fposition, fnormal, diffuse, specular);
+		vec3 normal = texture(normalTexture, ftexcoord).rgb;
+		normal = (normal * 2) - 1; // (0 - 1) -> (-1 - 1)
+		normal = normalize(ftbn * normal);
+
+		phong(lights[i], fposition, normal, diffuse, specular);
 		ocolor += ((vec4(diffuse, 1) * albedoColor) + (vec4(specular, 1) * specularColor)) * attenuation * lights[i].intensity;
 	}
+	//ocolor = texture(normalTexture, ftexcoord);
 }

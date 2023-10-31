@@ -53,7 +53,7 @@ namespace nc
 		for (auto& program : programs) {
 			program->Use();
 			// set camera in shader program
-			//if (camera) camera->SetProgram(program);
+			if (camera) camera->SetProgram(program);
 
 			// set lights in shader program
 			int index = 0;

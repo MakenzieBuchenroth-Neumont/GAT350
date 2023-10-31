@@ -27,6 +27,7 @@ namespace nc
 		void processGui();
 
 	public:
+		uint32_t params{ 0 }; // 000000000
 		glm::vec3 albedo{ 1 };
 		glm::vec3 specular{ 1 };
 		glm::vec3 emissive{ 0 };

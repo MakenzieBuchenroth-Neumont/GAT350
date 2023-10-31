@@ -52,7 +52,7 @@ namespace nc
             ImGui::DragFloat("Outer Angle", &m_lights[m_selected].outerAngle, 1.0f, m_lights[m_selected].innerAngle, 90.0f);
         }
         ImGui::DragFloat("Intensity", &m_lights[m_selected].intensity, 0.1f, 0.0f, 10.0f);
-        ImGui::ColorEdit3("Diffuse Color", &m_lights[m_selected].color[0], 0.1f);
+        ImGui::ColorEdit3("Diffuse Color", &m_lights[m_selected].color[0]);
         ImGui::End();
 
         ImGui::Begin("Scene");
