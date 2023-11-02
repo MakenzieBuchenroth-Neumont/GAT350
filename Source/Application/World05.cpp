@@ -122,6 +122,17 @@ namespace nc
         material->processGui();
         material->Bind();
 
+        material = GET_RESOURCE(Material, "materials/refraction.mtrl");
+        if (material) {
+            ImGui::Begin("Refraction");
+            //m_refraction = 1.0f + std::fabs(std::sin(m_time * 0.1f));
+            ImGui::DragFloat("IOR", &m_refraction, 0.01f, 1, 3);
+            auto program = material->GetProgram();
+            program->Use();
+            program->SetUniform("ior", m_refraction);
+            ImGui::End();
+        }
+
         // add light vector and gui
 
 
