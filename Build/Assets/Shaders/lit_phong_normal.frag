@@ -100,5 +100,4 @@ void main()
 		phong(lights[i], fposition, normal, diffuse, specular);
 		ocolor += ((vec4(diffuse, 1) * albedoColor) + (vec4(specular, 1) * specularColor)) * attenuation * lights[i].intensity;
 	}
-	//ocolor = texture(normalTexture, ftexcoord);
 }

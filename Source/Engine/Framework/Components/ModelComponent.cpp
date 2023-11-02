@@ -31,6 +31,8 @@ namespace nc
 		auto material = model->GetMaterial();
 		material->Bind();
 		material->GetProgram()->SetUniform("model", m_owner->transform.GetMatrix());
+		glDepthMask(enableDepth);
+		glDepthMask(cullFace);
 		model->Draw();
 	}
 
@@ -38,5 +40,12 @@ namespace nc
 	{
 		READ_DATA(value, modelName);
 		READ_DATA(value, materialName);
+	
+		READ_DATA(value, enableDepth);
+		std::string cullFaceName;
+		if (READ_NAME_DATA(value, "cullFace", cullFaceName)) {
+			if (IsEqualIgnoreCase(cullFaceName, "front")) cullFace = GL_FRONT;
+			if (IsEqualIgnoreCase(cullFaceName, "back")) cullFace = GL_FRONT_AND_BACK;
+		}
 	}
 }

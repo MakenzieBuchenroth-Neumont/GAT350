@@ -13,10 +13,11 @@ namespace nc
 	class Material : public Resource
 	{
 	public:
-		const uint32_t ALBEDO_TEXTURE_MASK	 = (1 << 0); // 0001
-		const uint32_t SPECULAR_TEXTURE_MASK = (1 << 1); // 0010
-		const uint32_t NORMAL_TEXTURE_MASK	 = (1 << 2); // 0100
-		const uint32_t EMISSIVE_TEXTURE_MASK = (1 << 3); // 1000
+		const uint32_t ALBEDO_TEXTURE_MASK	 = (1 << 0); // 00001
+		const uint32_t SPECULAR_TEXTURE_MASK = (1 << 1); // 00010
+		const uint32_t NORMAL_TEXTURE_MASK	 = (1 << 2); // 00100
+		const uint32_t EMISSIVE_TEXTURE_MASK = (1 << 3); // 01000
+		const uint32_t CUBEMAP_TEXTURE_MASK  = (1 << 4); // 10000
 
 	public:
 		virtual bool Create(std::string filename, ...) override;
@@ -40,6 +41,7 @@ namespace nc
 		res_t<Texture> specularTexture;
 		res_t<Texture> normalTexture;
 		res_t<Texture> emissiveTexture;
+		res_t<Texture> cubemapTexture;
 
 	private:
 		res_t<Program> m_program;
