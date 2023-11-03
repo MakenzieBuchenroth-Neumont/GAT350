@@ -125,7 +125,7 @@ namespace nc
         material = GET_RESOURCE(Material, "materials/refraction.mtrl");
         if (material) {
             ImGui::Begin("Refraction");
-            //m_refraction = 1.0f + std::fabs(std::sin(m_time * 0.1f));
+            //m_refraction = 1.0f + std::fabs(std::sin(m_time * 0.1f)); 
             ImGui::DragFloat("IOR", &m_refraction, 0.01f, 1, 3);
             auto program = material->GetProgram();
             program->Use();

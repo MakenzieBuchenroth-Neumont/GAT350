@@ -99,6 +99,7 @@ namespace nc
 			emissiveTexture->SetActive(GL_TEXTURE3);
 			emissiveTexture->Bind();
 		}
+
 	}
 
 	void Material::processGui() {

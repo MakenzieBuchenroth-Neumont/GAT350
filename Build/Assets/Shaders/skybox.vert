@@ -2,7 +2,7 @@
 
 in layout(location = 0) vec3 position;
 
-out layout(location = 1) vec3 otexcoord;
+out layout(location = 0) vec3 otexcoord;
 
 uniform mat4 model;
 uniform mat4 view;

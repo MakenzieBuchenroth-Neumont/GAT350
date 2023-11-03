@@ -176,5 +176,8 @@
     <None Include="..\..\Build\Assets\Materials\refraction.mtrl">
       <Filter>Materials</Filter>
     </None>
+    <None Include="..\..\Build\Assets\Materials\skybox2.mtrl">
+      <Filter>Materials</Filter>
+    </None>
   </ItemGroup>
 </Project>

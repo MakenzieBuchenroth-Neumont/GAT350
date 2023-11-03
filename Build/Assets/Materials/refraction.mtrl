@@ -1,12 +1,12 @@
 {
   "program": "shaders/refraction.prog",
-  "cubemap": "night_cubemap",
+  "cubemap": "storforsen",
   "cubemaps": [
-    "textures/night_cubemap/posx.jpg",
-    "textures/night_cubemap/negx.jpg",
-    "textures/night_cubemap/posy.jpg",
-    "textures/night_cubemap/negy.jpg",
-    "textures/night_cubemap/posz.jpg",
-    "textures/night_cubemap/negz.jpg"
+    "textures/storforsen/posx.jpg",
+    "textures/storforsen/negx.jpg",
+    "textures/storforsen/posy.jpg",
+    "textures/storforsen/negy.jpg",
+    "textures/storforsen/posz.jpg",
+    "textures/storforsen/negz.jpg"
   ]
 }
