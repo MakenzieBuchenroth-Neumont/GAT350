@@ -61,9 +61,14 @@ void phong(in Light light, in vec3 position, in vec3 normal, out vec3 diffuse, o
 	// specular
 	specular = vec3(0);
 	if (intensity > 0) {
-		vec3 reflectDir = reflect(-lightDir, normal);
+	// phong
+		//vec3 reflectDir = reflect(-lightDir, normal);
 		vec3 viewDir = normalize(-fposition);
-		float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+		// blinn-phong
+		vec3 h = normalize(viewDir + lightDir);
+		intensity = max(dot(h, normal), 0);
+		intensity = pow(intensity, material.shininess);
+		//float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
 		specular = vec3(intensity * spotIntensity);
 	}
 }

@@ -69,24 +69,6 @@
 					"materialName": "materials/refraction.mtrl"
 				}
 			]
-		},
-		{
-			"type": "Actor",
-			"name": "camera1",
-			"persistent": true,
-			"transform": {
-				"position": [ 0, 0, 0 ],
-				"scale": [ 1, 1, 1 ],
-				"rotation": [ 0, 180, 0 ]
-			},
-			"components": [
-				{
-					"type": "CameraComponent",
-					"fov": 70,
-					"near": 0.1,
-					"far": 100.0
-				}
-			]
 		}
 	]
 }

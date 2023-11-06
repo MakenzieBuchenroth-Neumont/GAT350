@@ -1,10 +1,10 @@
 INFO: Factory.h(74) Class registered: ModelComponent
 INFO: Factory.h(74) Class registered: LightComponent
 INFO: Factory.h(74) Class registered: EnginePhysicsComponent
+INFO: Factory.h(74) Class registered: CameraController
 INFO: Factory.h(74) Class registered: CameraComponent
 INFO: Factory.h(74) Class registered: Actor
 INFO: Main.cpp(14) Initialize Engine...
-WARNING: Program.cpp(165) Could not find uniform location: shininess
 WARNING: Program.cpp(165) Could not find uniform location: lights[0].type
 WARNING: Program.cpp(165) Could not find uniform location: lights[0].position
 WARNING: Program.cpp(165) Could not find uniform location: lights[0].direction
@@ -39,7 +39,7 @@ WARNING: Program.cpp(165) Could not find uniform location: material.params
 WARNING: Program.cpp(165) Could not find uniform location: material.albedo
 WARNING: Program.cpp(165) Could not find uniform location: material.specular
 WARNING: Program.cpp(165) Could not find uniform location: material.emissive
-WARNING: Program.cpp(165) Could not find uniform location: shininess
+WARNING: Program.cpp(165) Could not find uniform location: material.shininess
 WARNING: Program.cpp(165) Could not find uniform location: material.tiling
 WARNING: Program.cpp(165) Could not find uniform location: material.offset
 WARNING: Program.cpp(165) Could not find uniform location: model
@@ -47,13 +47,13 @@ WARNING: Program.cpp(165) Could not find uniform location: material.params
 WARNING: Program.cpp(165) Could not find uniform location: material.albedo
 WARNING: Program.cpp(165) Could not find uniform location: material.specular
 WARNING: Program.cpp(165) Could not find uniform location: material.emissive
-WARNING: Program.cpp(165) Could not find uniform location: shininess
+WARNING: Program.cpp(165) Could not find uniform location: material.shininess
 WARNING: Program.cpp(165) Could not find uniform location: material.tiling
 WARNING: Program.cpp(165) Could not find uniform location: material.offset
 WARNING: Program.cpp(165) Could not find uniform location: material.params
 WARNING: Program.cpp(165) Could not find uniform location: material.albedo
 WARNING: Program.cpp(165) Could not find uniform location: material.specular
 WARNING: Program.cpp(165) Could not find uniform location: material.emissive
-WARNING: Program.cpp(165) Could not find uniform location: shininess
+WARNING: Program.cpp(165) Could not find uniform location: material.shininess
 WARNING: Program.cpp(165) Could not find uniform location: material.tiling
 WARNING: Program.cpp(165) Could not find uniform location: material.offset

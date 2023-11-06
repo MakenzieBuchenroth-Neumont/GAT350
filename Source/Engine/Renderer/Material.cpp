@@ -79,7 +79,7 @@ namespace nc
 		m_program->SetUniform("material.albedo", albedo);
 		m_program->SetUniform("material.specular", specular);
 		m_program->SetUniform("material.emissive", emissive);
-		m_program->SetUniform("shininess", shininess);
+		m_program->SetUniform("material.shininess", shininess);
 		m_program->SetUniform("material.tiling", tiling);
 		m_program->SetUniform("material.offset", offset);
 
@@ -98,6 +98,10 @@ namespace nc
 		if (emissiveTexture) {
 			emissiveTexture->SetActive(GL_TEXTURE3);
 			emissiveTexture->Bind();
+		}
+		if (cubemapTexture) {
+			cubemapTexture->SetActive(GL_TEXTURE4);
+			cubemapTexture->Bind();
 		}
 
 	}
