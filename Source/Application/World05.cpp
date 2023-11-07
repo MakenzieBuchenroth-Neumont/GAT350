@@ -11,7 +11,7 @@ namespace nc
 {
     bool World05::Initialize() {
 
-        std::string one = ToUpper("hellO world");
+        /*std::string one = ToUpper("hellO world");
         std::string two = ToLower("GoODByE");
 
         std::cout << one << "\n";
@@ -31,9 +31,8 @@ namespace nc
         std::string eight = "Eight";
 
         std::cout << CreateUnique(seven) << "\n";
-        std::cout << CreateUnique(eight) << "\n";
+        std::cout << CreateUnique(eight) << "\n";*/
         
-
         m_scene = std::make_unique<Scene>();
         m_scene->Load("Scenes/scene.json");
         m_scene->Initialize();
@@ -72,6 +71,15 @@ namespace nc
             m_scene->Add(std::move(actor));
         }
 
+        for (int i = 0; i < 100; i++) {
+            auto actor = CREATE_CLASS_BASE(Actor, "tree");
+            actor->name = CreateUnique("tree");
+            actor->transform.position = glm::vec3{ randomf(-10,10), 0, randomf(-10,10) };
+            actor->transform.scale = glm::vec3{ randomf(0.5f, 3.0f), randomf(0.5, 3.0f), 0 };
+            actor->Initialize();
+            m_scene->Add(std::move(actor));
+        }
+
         return true;
     }
 
@@ -85,7 +93,7 @@ namespace nc
         m_scene->Update(dt);
         m_scene->processGui();
 
-        auto actor = m_scene->GetActorByName<Actor>("actor1");
+        auto actor = m_scene->GetActorByName<Actor>("ogre");
 
         //actor->transform.position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_D) ? m_speed * +dt * 2 : 0;
         //actor->transform.position.x += ENGINE.GetSystem<InputSystem>()->GetKeyDown(SDL_SCANCODE_A) ? m_speed * -dt * 2 : 0;

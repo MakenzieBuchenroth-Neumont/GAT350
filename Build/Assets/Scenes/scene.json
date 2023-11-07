@@ -13,7 +13,7 @@
 				{
 					"type": "ModelComponent",
 					"modelName": "models/cube.obj",
-					"materialName": "materials/skybox2.mtrl",
+					"materialName": "materials/skybox.mtrl",
 					"enableDepth": false,
 					"cullFace": "front"
 				}
@@ -21,10 +21,11 @@
 		},
 		{
 			"type": "Actor",
-			"name": "actor1",
+			"name": "ogre",
 			"persistent": true,
+			"active":  false,
 			"transform": {
-				"position": [ -0.8, -1.4, -3.6 ],
+				"position": [ -0, 0, 1 ],
 				"scale": [ 0.4, 0.4, 0.4 ],
 				"rotation": [ 0, 0, 0 ]
 			},
@@ -38,10 +39,11 @@
 		},
 		{
 			"type": "Actor",
-			"name": "actor2",
+			"name": "reflection",
 			"persistent": true,
+			"active":  false,
 			"transform": {
-				"position": [ 0.8, -1.4, -3.6 ],
+				"position": [ 0, 0, -1 ],
 				"scale": [ 0.4, 0.4, 0.4 ],
 				"rotation": [ 0, 0, 0 ]
 			},
@@ -55,10 +57,11 @@
 		},
 		{
 			"type": "Actor",
-			"name": "actor3",
+			"name": "refraction",
 			"persistent": true,
+			"active": false,
 			"transform": {
-				"position": [ 2.8, -1.4, -3.6 ],
+				"position": [ 0, 0, -1 ],
 				"scale": [ 0.4, 0.4, 0.4 ],
 				"rotation": [ 0, 0, 0 ]
 			},
@@ -67,6 +70,43 @@
 					"type": "ModelComponent",
 					"modelName": "models/ogre.obj",
 					"materialName": "materials/refraction.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "sprite",
+			"persistent": true,
+			"active": false,
+			"transform": {
+				"position": [ 0, 0, -2 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/sprite.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "tree",
+			"persistent": true,
+			"active": true,
+			"prototype":  true,
+			"transform": {
+				"position": [ 0, 0, -2 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/tree.mtrl"
 				}
 			]
 		}
