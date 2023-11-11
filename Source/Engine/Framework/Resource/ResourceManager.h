@@ -1,6 +1,7 @@
 #pragma once
 #include "Resource.h"
 #include "Framework/Singleton.h"
+#include "Core/StringUtils.h"
 #include "Core/Logger.h"
 #include <map>
 #include <memory>
@@ -8,6 +9,7 @@
 #include <vector>
 
 #define GET_RESOURCE(type, filename, ...) nc::ResourceManager::Instance().Get<type>(filename, __VA_ARGS__)
+#define ADD_RESOURCE(name, resource) nc::ResourceManager::Instance().Add(name, resource)
 
 namespace nc
 {
@@ -17,6 +19,9 @@ namespace nc
 	class ResourceManager : public Singleton<ResourceManager>
 	{
 	public:
+		template<typename T>
+		bool Add(const std::string& name, res_t<T> resource);
+
 		template<typename T, typename ... TArgs>
 		res_t<T> Get(const std::string& filename, TArgs ... args);
 
@@ -27,27 +32,44 @@ namespace nc
 		std::map<std::string, res_t<Resource>> m_resources;
 	};
 
+	template<typename T>
+	inline bool ResourceManager::Add(const std::string& name, res_t<T> resource)
+	{
+		std::string lname = ToLower(name);
+		if (m_resources.find(lname) != m_resources.end())
+		{
+			WARNING_LOG("Resource already exists: " << name);
+			return false;
+		}
+
+		m_resources[lname] = resource;
+
+		return true;
+	}
+
 	template<typename T, typename ...TArgs>
 	inline res_t<T> ResourceManager::Get(const std::string& filename, TArgs ...args)
 	{
+		std::string lfilename = ToLower(filename);
 		// find resource in resources map
-		if (m_resources.find(filename) != m_resources.end())
+		if (m_resources.find(lfilename) != m_resources.end())
 		{
 			// return resource
-			return std::dynamic_pointer_cast<T>(m_resources[filename]);
+			return std::dynamic_pointer_cast<T>(m_resources[lfilename]);
 		}
 
 		// resource not in resources map, create resource
 		res_t<T> resource = std::make_shared<T>();
-		if (!resource->Create(filename, args...))
+		if (!resource->Create(lfilename, args...))
 		{
 			// resource not created
 			WARNING_LOG("Could not create resource: " << filename);
 			return res_t<T>();
 		}
 
-		// add resource to resource map, return resource
-		m_resources[filename] = resource;
+		// add resource to resource map
+		Add(lfilename, resource);
+
 		return resource;
 	}
 

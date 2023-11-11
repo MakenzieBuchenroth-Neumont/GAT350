@@ -1,12 +1,13 @@
 #pragma once
 #include "Component.h"
+#include "Renderer/Program.h"
 
 namespace nc
 {
-	class CameraController : public Component
+	class RotateComponent : public Component
 	{
 	public:
-		CLASS_DECLARATION(CameraController)
+		CLASS_DECLARATION(RotateComponent)
 
 		bool Initialize() override;
 		void Update(float dt) override;
@@ -14,9 +15,6 @@ namespace nc
 		void processGui();
 
 	public:
-		float sensitivity = 0.1f;
-		float speed = 3;
-		float yaw = 0;
-		float pitch = 0;
+		glm::vec3 euler{ 0 };
 	};
 }

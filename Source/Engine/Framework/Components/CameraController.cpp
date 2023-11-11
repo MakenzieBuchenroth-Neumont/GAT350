@@ -52,6 +52,12 @@ namespace nc
 		m_owner->transform.position += direction * (speed * dt);
 	}
 
+	void CameraController::processGui()
+	{
+			ImGui::DragFloat("Speed", &speed, 0.1f);
+			ImGui::DragFloat("Sensitivity", &sensitivity, 0.1f);
+	}
+
 	void CameraController::Read(const json_t& value)
 	{
 		READ_DATA(value, speed);
