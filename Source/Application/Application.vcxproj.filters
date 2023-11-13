@@ -73,6 +73,9 @@
     <ClCompile Include="World06.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World07.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -91,6 +94,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World06.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World07.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -255,6 +261,18 @@
       <Filter>Shaders\unlit_texture</Filter>
     </None>
     <None Include="..\..\Build\Assets\Materials\postprocess.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\foxy_endo.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\foxy_eye.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\sceneShadow.json">
+      <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Fantasy\fantasy.mtrl">
       <Filter>Materials</Filter>
     </None>
   </ItemGroup>

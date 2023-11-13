@@ -29,7 +29,7 @@
 			"name": "light",
 			"persistent": true,
 			"transform": {
-				"position": [ -3, 0, 1 ],
+				"position": [ -5.6, 0, 1 ],
 				"scale": [ 1, 1, 1 ],
 				"rotation": [ 0, 0, 0 ]
 			},
@@ -47,23 +47,67 @@
 		},
 		{
 			"type": "Actor",
-			"name": "ogre",
+			"name": "foxy_main",
 			"persistent": true,
 			"active": true,
 			"transform": {
-				"position": [ -0, 0, 1 ],
-				"scale": [ 0.4, 0.4, 0.4 ],
-				"rotation": [0, 0, 0]
+				"position": [ -0, -0.6, 0.5 ],
+				"scale": [ 0.2, 0.2, 0.2 ],
+				"rotation": [ 10, 0, 0 ]
 			},
 			"components": [
 				{
 					"type": "ModelComponent",
-					"modelName": "models/ogre.obj",
-					"materialName": "materials/ogre.mtrl"
+					"modelName": "models/foxy.obj",
+					"materialName": "materials/foxy.mtrl"
 				},
 				{
 					"type": "RotateComponent",
-					"euler": [ 0, 90, 0 ]
+					"euler": [ 0, 0, 0 ]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "foxy_endo",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ -0, -0.6, 0.5 ],
+				"scale": [ 0.2, 0.2, 0.2 ],
+				"rotation": [ 10, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/foxy.obj",
+					"materialName": "materials/foxy_endo.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"euler": [ 0, 0, 0 ]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "foxy_eye",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ -0, -0.6, 0.5 ],
+				"scale": [ 0.2, 0.2, 0.2 ],
+				"rotation": [ 10, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/foxy.obj",
+					"materialName": "materials/foxy_eye.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"euler": [ 0, 0, 0 ]
 				}
 			]
 		},

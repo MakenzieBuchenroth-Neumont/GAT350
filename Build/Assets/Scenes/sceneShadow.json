@@ -1,0 +1,115 @@
+{
+	"actors": [
+		{
+			"type": "Actor",
+			"name": "camera",
+			"persistent": true,
+			"transform": {
+				"position": [ 0, 0, 1.672 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "CameraComponent",
+					"fov": 70,
+					"aspect": 1.774,
+					"near": 0.1,
+					"far": 100
+				},
+				{
+					"type": "CameraController",
+					"speed": 5,
+					"sensitivity": 0.5
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "light",
+			"persistent": true,
+			"transform": {
+				"position": [ 0, 0, 0 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "LightComponent",
+					"lightType": "point",
+					"color": [ 1, 1, 1 ],
+					"intensity": 2,
+					"range": 10,
+					"innerAngle": 10,
+					"outerAngle": 30
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "tree",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ -0.8, -1.6, -3.9 ],
+				"scale": [ 0.1, 0.1, 0.1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "fantasy/obj/SF_Env_Elven_Redtree_01.obj",
+					"materialName": "fantasy/fantasy.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"euler": [ 0, 0, 0 ]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "house",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ -0, -1.6, -5 ],
+				"scale": [ 0.1, 0.1, 0.1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "fantasy/obj/SF_Bld_Elven_House_07.obj",
+					"materialName": "fantasy/fantasy.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"euler": [ 0, 0, 0 ]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "ground",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ -4.7, -1.6, 0 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "fantasy/obj/SF_Env_Tile_Grass_01.obj",
+					"materialName": "fantasy/fantasy.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"euler": [ 0, 0, 0 ]
+				}
+			]
+		}
+	]
+}

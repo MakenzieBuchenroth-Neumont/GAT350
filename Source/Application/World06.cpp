@@ -50,27 +50,27 @@ namespace nc
 
         bool effect = m_params & INVERT_MASK;
         if (ImGui::Checkbox("Invert", &effect)) {
-            (effect) ? m_params |= INVERT_MASK : m_params ^= INVERT_MASK;
+            (effect) ? m_params |= INVERT_MASK : m_params &= ~INVERT_MASK;
         }
         effect = m_params & GRAYSCALE_MASK;
         if (ImGui::Checkbox("Grayscale", &effect)) {
-            (effect) ? m_params |= GRAYSCALE_MASK : m_params ^= GRAYSCALE_MASK;
+            (effect) ? m_params |= GRAYSCALE_MASK : m_params &= ~GRAYSCALE_MASK;
         }
         effect = m_params & COLORTINT_MASK;
         if (ImGui::Checkbox("Color Tint", &effect)) {
-            (effect) ? m_params |= COLORTINT_MASK : m_params ^= COLORTINT_MASK;
+            (effect) ? m_params |= COLORTINT_MASK : m_params &= ~COLORTINT_MASK;
         }
         effect = m_params & GRAIN_MASK;
         if (ImGui::Checkbox("Grain", &effect)) {
-            (effect) ? m_params |= GRAIN_MASK : m_params ^= GRAIN_MASK;
+            (effect) ? m_params |= GRAIN_MASK : m_params &= ~GRAIN_MASK;
         }
         effect = m_params & SCANLINE_MASK;
         if (ImGui::Checkbox("Scanline", &effect)) {
-            (effect) ? m_params |= SCANLINE_MASK : m_params ^= SCANLINE_MASK;
+            (effect) ? m_params |= SCANLINE_MASK : m_params &= ~SCANLINE_MASK;
         }
         effect = m_params & BLOOM_MASK;
         if (ImGui::Checkbox("Bloom", &effect)) {
-            (effect) ? m_params |= BLOOM_MASK : m_params ^= BLOOM_MASK;
+            (effect) ? m_params |= BLOOM_MASK : m_params &= ~BLOOM_MASK;
         }
         ImGui::End();
 
