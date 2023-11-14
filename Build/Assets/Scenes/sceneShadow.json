@@ -29,19 +29,21 @@
 			"name": "light",
 			"persistent": true,
 			"transform": {
-				"position": [ 0, 0, 0 ],
+				"position": [ 0.3, 3, -1 ],
 				"scale": [ 1, 1, 1 ],
-				"rotation": [ 0, 0, 0 ]
+				"rotation": [134, 0, 0 ]
 			},
 			"components": [
 				{
 					"type": "LightComponent",
-					"lightType": "point",
+					"lightType": "directional",
 					"color": [ 1, 1, 1 ],
-					"intensity": 2,
+					"intensity": 1.3,
 					"range": 10,
 					"innerAngle": 10,
-					"outerAngle": 30
+					"outerAngle": 30,
+					"castShadow": true,
+					"shadowSize":  6.2
 				}
 			]
 		},
@@ -104,10 +106,24 @@
 					"type": "ModelComponent",
 					"modelName": "fantasy/obj/SF_Env_Tile_Grass_01.obj",
 					"materialName": "fantasy/fantasy.mtrl"
-				},
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "depthDebug",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ 0, 0, -2 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
 				{
-					"type": "RotateComponent",
-					"euler": [ 0, 0, 0 ]
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/sprite.mtrl"
 				}
 			]
 		}

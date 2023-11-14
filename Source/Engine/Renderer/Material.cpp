@@ -103,6 +103,10 @@ namespace nc
 			cubemapTexture->SetActive(GL_TEXTURE4);
 			cubemapTexture->Bind();
 		}
+		if (depthTexture) {
+			depthTexture->SetActive(GL_TEXTURE5);
+			depthTexture->Bind();
+		}
 
 	}
 
