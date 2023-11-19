@@ -53,6 +53,9 @@
     <Filter Include="Shaders\shadow_depth">
       <UniqueIdentifier>{9e9d076d-f176-4c90-b784-0577d8beda25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders\cel">
+      <UniqueIdentifier>{48f10568-64b9-49a9-8406-654fb644396f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -79,6 +82,9 @@
     <ClCompile Include="World07.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World08.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -100,6 +106,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World07.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World08.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -286,6 +295,27 @@
     </None>
     <None Include="..\..\Build\Assets\Shaders\shadow_depth.vert">
       <Filter>Shaders\shadow_depth</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\ui_light.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\cel.frag">
+      <Filter>Shaders\cel</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\cel.prog">
+      <Filter>Shaders\cel</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\fantasy_cel.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\cel.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\cel.vert">
+      <Filter>Shaders\cel</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\sceneCel.json">
+      <Filter>Scenes</Filter>
     </None>
   </ItemGroup>
 </Project>

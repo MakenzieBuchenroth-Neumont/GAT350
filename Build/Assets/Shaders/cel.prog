@@ -1,0 +1,4 @@
+{
+	"vertexShader": "shaders/cel.vert",
+	"fragmentShader": "shaders/cel.frag"
+}

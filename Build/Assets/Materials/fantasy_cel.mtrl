@@ -1,0 +1,17 @@
+{
+  "program":"shaders/cel.prog",
+  "albedoTexture": "fantasy/textures/Medieval_Texture.png",
+  "albedo": [
+    1,
+    1,
+    1
+  ],
+  "specular": [
+    0,
+    0,
+    0
+  ],
+  "shininess":  60,
+  "tiling": [ 1, 1 ],
+  "offset": [ 0, 0 ]
+}

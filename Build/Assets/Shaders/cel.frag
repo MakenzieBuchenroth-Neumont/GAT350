@@ -14,6 +14,7 @@ in layout(location = 0) vec3 fposition;
 in layout(location = 1) vec3 fnormal;
 in layout(location = 2) vec2 ftexcoord;
 in layout(location = 3) vec4 fshadowcoord;
+in layout(location = 4) vec3 fviewDir;
 
 out layout(location = 0) vec4 ocolor;
 
@@ -41,6 +42,11 @@ uniform struct Light {
 uniform vec3 ambientLight;
 uniform int numLights = 3;
 uniform float shadowBias = 0.005;
+uniform int celLevels = 5;
+uniform float celSpecularCutoff = 0.3;
+uniform float celOutline = 0.1;
+
+const float celScaleFactor = 1.0 / celLevels;
 
 layout(binding = 0) uniform sampler2D albedoTexture;
 layout(binding = 1) uniform sampler2D specularTexture;
@@ -50,7 +56,7 @@ layout(binding = 5) uniform sampler2D shadowTexture;
 
 void phong(in Light light, in vec3 position, in vec3 normal, out vec3 diffuse, out vec3 specular) {
 	// diffuse
-	vec3 lightDir = (light.type == DIRECTIONAL) ? normalize(-light.direction) : normalize(light.position - fposition);
+	vec3 lightDir = (light.type == DIRECTIONAL) ? normalize(-light.direction) : normalize(light.position - position);
 
 	float spotIntensity = 1;
 	if (light.type == SPOT) {
@@ -59,7 +65,8 @@ void phong(in Light light, in vec3 position, in vec3 normal, out vec3 diffuse, o
 	}
 
 	float intensity = max(dot(lightDir, fnormal), 0) * spotIntensity;
-	diffuse = (light.color * intensity);
+	float celIntensity = floor(intensity * celLevels) * celScaleFactor;
+	diffuse = (light.color * celIntensity);
 
 	// specular
 	specular = vec3(0);
@@ -70,6 +77,7 @@ void phong(in Light light, in vec3 position, in vec3 normal, out vec3 diffuse, o
 		vec3 h = normalize(viewDir + lightDir);
 		intensity = max(dot(h, normal), 0);
 		intensity = pow(intensity, material.shininess);
+		intensity = (intensity < celSpecularCutoff) ? 0 : 1;
 		//float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
 		specular = vec3(intensity * spotIntensity);
 	}
@@ -103,6 +111,12 @@ void main()
 
 	// set lights
 	for (int i = 0; i < numLights; i++) {
+		// outline
+		float outline = dot(fnormal, fviewDir);
+		if (outline < celOutline) {
+			ocolor = vec4(1);
+			return;
+		}
 		vec3 diffuse;
 		vec3 specular;
  

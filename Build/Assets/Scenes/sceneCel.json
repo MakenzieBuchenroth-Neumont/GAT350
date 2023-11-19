@@ -42,9 +42,9 @@
 			"persistent": true,
 			"transform": {
 				"position": [
-					0.3,
-					3,
-					-1
+					0,
+					0,
+					2
 				],
 				"scale": [
 					0.25,
@@ -60,7 +60,7 @@
 			"components": [
 				{
 					"type": "LightComponent",
-					"lightType": "directional",
+					"lightType": "point",
 					"color": [
 						1,
 						1,
@@ -105,8 +105,8 @@
 			"components": [
 				{
 					"type": "ModelComponent",
-					"modelName": "models/ogre.obj",
-					"materialName": "materials/ogre.mtrl"
+					"modelName": "fantasy/obj/SF_Bld_Elven_House_05.obj",
+					"materialName": "materials/fantasy_cel.mtrl"
 				},
 				{
 					"type": "RotateComponent",
@@ -144,7 +144,7 @@
 				{
 					"type": "ModelComponent",
 					"modelName": "fantasy/obj/SF_Env_Tile_Grass_01.obj",
-					"materialName": "fantasy/fantasy.mtrl"
+					"materialName": "materials/fantasy_cel.mtrl"
 				}
 			]
 		},
