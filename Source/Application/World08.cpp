@@ -12,9 +12,11 @@ namespace nc
 {
     bool World08::Initialize() {
         
-         m_scene = std::make_unique<Scene>();
+        m_scene = std::make_unique<Scene>();
         m_scene->Load("Scenes/sceneCel.json");
         m_scene->Initialize();
+
+        m_editor = std::make_unique<Editor>();
 
         // create depth texture
         auto texture = std::make_shared<Texture>();
@@ -51,12 +53,14 @@ namespace nc
 
         m_scene->Update(dt);
 
+        m_editor->proccessGui(m_scene.get());
+
         ImGui::Begin("Cel");
         ImGui::DragInt("Levels", &celLevels);
         ImGui::DragFloat("Cel Specular Cutoff", &celSpecularCutoff);
         ImGui::DragFloat("Cel Outline", &celOutline);
         ImGui::End();
-        m_scene->processGui();
+
         auto program = GET_RESOURCE(Program, "shaders/cel.prog");
         if (program) {
             program->Use();

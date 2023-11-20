@@ -42,7 +42,7 @@ namespace nc
 			WARNING_LOG("Resource already exists: " << name);
 			return false;
 		}
-
+		resource->name = lname;
 		m_resources[lname] = resource;
 
 		return true;

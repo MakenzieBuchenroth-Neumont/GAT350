@@ -35,6 +35,6 @@ namespace nc {
 
 		int celLevels = 5;
 		float celSpecularCutoff = 0.3;
-		float celOutline = 0.3;
+		float celOutline = 0.05;
 	};
 }

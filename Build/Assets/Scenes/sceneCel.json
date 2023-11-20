@@ -82,7 +82,7 @@
 		},
 		{
 			"type": "Actor",
-			"name": "ogre",
+			"name": "house",
 			"persistent": true,
 			"active": true,
 			"transform": {
@@ -107,6 +107,44 @@
 					"type": "ModelComponent",
 					"modelName": "fantasy/obj/SF_Bld_Elven_House_05.obj",
 					"materialName": "materials/fantasy_cel.mtrl"
+				},
+				{
+					"type": "RotateComponent",
+					"euler": [
+						0,
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "ogre",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [
+					-0.8,
+					-1.6,
+					-3.9
+				],
+				"scale": [
+					0.1,
+					0.1,
+					0.1
+				],
+				"rotation": [
+					0,
+					0,
+					0
+				]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/ogre.obj",
+					"materialName": "materials/ogre.mtrl"
 				},
 				{
 					"type": "RotateComponent",
