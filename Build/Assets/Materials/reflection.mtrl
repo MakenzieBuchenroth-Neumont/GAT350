@@ -2,11 +2,11 @@
   "program": "shaders/reflection.prog",
   "cubemap": "storforsen",
   "cubemaps": [
-    "textures/storforsen/posx.jpg",
-    "textures/storforsen/negx.jpg",
-    "textures/storforsen/posy.jpg",
-    "textures/storforsen/negy.jpg",
-    "textures/storforsen/posz.jpg",
-    "textures/storforsen/negz.jpg"
+    "textures/day_skybox/posx.jpg",
+    "textures/day_skybox/negx.jpg",
+    "textures/day_skybox/posy.jpg",
+    "textures/day_skybox/negy.jpg",
+    "textures/day_skybox/posz.jpg",
+    "textures/day_skybox/negz.jpg"
   ]
 }

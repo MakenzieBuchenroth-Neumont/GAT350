@@ -67,6 +67,9 @@
     <ClCompile Include="Framebuffer.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\imgui\ImFileDialog.cpp">
+      <Filter>Source\ImGui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h">

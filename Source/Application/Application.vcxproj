@@ -171,6 +171,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Build\Assets\Fantasy\fantasy.mtrl" />
+    <None Include="..\..\Build\Assets\Farm\farm.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\basic.mtrl" />
     <None Include="..\..\Build\Assets\Materials\cel.mtrl" />
     <None Include="..\..\Build\Assets\Materials\fantasy_cel.mtrl" />
     <None Include="..\..\Build\Assets\Materials\foxy.mtrl" />
@@ -178,6 +180,7 @@
     <None Include="..\..\Build\Assets\Materials\foxy_eye.mtrl" />
     <None Include="..\..\Build\Assets\Materials\framebuffer.mtrl" />
     <None Include="..\..\Build\Assets\Materials\grid.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\leaves.mtrl" />
     <None Include="..\..\Build\Assets\Materials\multi.mtrl" />
     <None Include="..\..\Build\Assets\Materials\ogre.mtrl" />
     <None Include="..\..\Build\Assets\Materials\phong.mtrl" />
@@ -187,15 +190,20 @@
     <None Include="..\..\Build\Assets\Materials\refraction.mtrl" />
     <None Include="..\..\Build\Assets\Materials\skybox.mtrl" />
     <None Include="..\..\Build\Assets\Materials\skybox2.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\skybox3.mtrl" />
     <None Include="..\..\Build\Assets\Materials\spot.mtrl" />
     <None Include="..\..\Build\Assets\Materials\sprite.mtrl" />
     <None Include="..\..\Build\Assets\Materials\squirrel.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\town.mtrl" />
     <None Include="..\..\Build\Assets\Materials\tree.mtrl" />
+    <None Include="..\..\Build\Assets\Materials\ui_camera.mtrl" />
     <None Include="..\..\Build\Assets\Materials\ui_light.mtrl" />
     <None Include="..\..\Build\Assets\Scenes\scene.json" />
     <None Include="..\..\Build\Assets\Scenes\sceneCel.json" />
+    <None Include="..\..\Build\Assets\Scenes\sceneFinal.json" />
     <None Include="..\..\Build\Assets\Scenes\sceneFramebuffer.json" />
     <None Include="..\..\Build\Assets\Scenes\sceneShadow.json" />
+    <None Include="..\..\Build\Assets\Scenes\scene_editor.json" />
     <None Include="..\..\Build\Assets\Shaders\cel.frag" />
     <None Include="..\..\Build\Assets\Shaders\cel.prog" />
     <None Include="..\..\Build\Assets\Shaders\cel.vert" />

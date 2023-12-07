@@ -36,6 +36,12 @@ namespace nc
 
 	void ModelComponent::processGui()
 	{
+		(model) ? ImGui::Text("Model: %s", model->name.c_str()) : ImGui::Text("None");
+		Gui::getDialogResource<Model>(model, "ModelTextureDialog", "Open Model", "Model file (*.obj;*.fbx){.obj,.fbx},.*");
+
+		(material) ? ImGui::Text("Material: %s", material->name.c_str()) : ImGui::Text("None");
+		Gui::getDialogResource<Material>(material, "MaterialTextureDialog", "Open Material", "Material file (*.mtrl){.mtrl},.*");
+
 		ImGui::Checkbox("Cast Shadow", &castShadow);
 		ImGui::Checkbox("Enable Depth", &enableDepth);
 	}

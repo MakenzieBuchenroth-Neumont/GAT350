@@ -1,0 +1,1363 @@
+{
+	"actors": [
+		{
+			"type": "Actor",
+			"name": "skybox",
+			"persistent": true,
+			"transform": {
+				"position": [ 0, 0, 1 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/cube.obj",
+					"materialName": "materials/skybox3.mtrl",
+					"enableDepth": false,
+					"cullFace": "front"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "camera",
+			"persistent": true,
+			"transform": {
+				"position": [
+					-100.768,
+					68.490,
+					116.829
+				],
+				"scale": [
+					1,
+					1,
+					1
+				],
+				"rotation": [
+					0,
+					0,
+					0
+				]
+			},
+			"components": [
+				{
+					"type": "CameraComponent",
+					"fov": 70,
+					"aspect": 1.774,
+					"near": 0.1,
+					"far": 10000000.000
+				},
+				{
+					"type": "CameraController",
+					"speed": 200,
+					"sensitivity": 0.5
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "light",
+			"persistent": true,
+			"transform": {
+				"position": [
+					-123.7,
+					108,
+					-24.8
+				],
+				"scale": [
+					2,
+					2,
+					2
+				],
+				"rotation": [
+					90,
+					0,
+					0
+				]
+			},
+			"components": [
+				{
+					"type": "LightComponent",
+					"lightType": "directional",
+					"color": [
+						1,
+						1,
+						1
+					],
+					"intensity": 1.2,
+					"range": 10,
+					"innerAngle": 10,
+					"outerAngle": 30,
+					"castShadow": true,
+					"shadowSize": 6.2
+				},
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/ui_light.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "ground",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ 0, 0, 0 ],
+				"scale": [ 0.4, 0.4, 0.4 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/OBJ/SM_Generic_Ground_Flat_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "barn",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ -200.9, 14, 34.2 ],
+				"scale": [ 0.05, 0.05, 0.05 ],
+				"rotation": [ 0, 180, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/OBJ/SM_Bld_Barn_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "background",
+			"active": true,
+			"transform": {
+				"position": [ -510.2, 6.7, 100.4 ],
+				"scale": [ 5, 5, 5 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/SF_Env_BackgroundHills_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "farmhouse",
+			"active": true,
+			"transform": {
+				"position": [ -116.300, 12.600, -51.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Bld_Farmhouse_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "watertower",
+			"active": true,
+			"transform": {
+				"position": [ -166.200, 12.600, -53.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 130, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Bld_WaterTower_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_beginning_1",
+			"active": true,
+			"transform": {
+				"position": [ -143.400, 13.600, 15.800 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 1, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_End_Top_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_beginning_2",
+			"active": true,
+			"transform": {
+				"position": [ -143.400, 13.600, 40.300 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 1, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_End_Top_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_beginning_3",
+			"active": true,
+			"transform": {
+				"position": [ -143.400, 13.600, 62.500 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -1.350, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_End_Top_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_middle_1",
+			"active": true,
+			"transform": {
+				"position": [ -118.500, 13.600, 16.100 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 1, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_Center_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_middle_2",
+			"active": true,
+			"transform": {
+				"position": [ -118.500, 13.600, 40.800 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -1.350, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_Center_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_middle_3",
+			"active": true,
+			"transform": {
+				"position": [ -118.500, 14.1, 62.500 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -1.350, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_Center_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_end_1",
+			"active": true,
+			"transform": {
+				"position": [ -93.600, 13.800, 16.300 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -2.800, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_End_Bottom_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_end_2",
+			"active": true,
+			"transform": {
+				"position": [ -93.600, 14.100, 40.800 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -2.800, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_End_Bottom_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtmound_end_3",
+			"active": true,
+			"transform": {
+				"position": [ -93.600, 14.500, 62.500 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -1.000, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Dirt_Rows_End_Bottom_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtroad_1",
+			"active": true,
+			"transform": {
+				"position": [ -116, 12.400, -7.300 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Road_Dirt_Corner_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtroad_2",
+			"active": true,
+			"transform": {
+				"position": [ -148, 13.700, 37.800 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -3.000, -43.000, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Road_Dirt_Corner_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtroad_details_1",
+			"active": true,
+			"transform": {
+				"position": [ -116.600, 13.200, -14.000 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Road_Pebbles_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "dirtroad_details_2",
+			"active": true,
+			"transform": {
+				"position": [ -148.7, 13.200, 37.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -3.000, -43.000, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Road_Pebbles_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row1_1",
+			"active": true,
+			"transform": {
+				"position": [ -143.100, 13.800, 15.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Vege_Rows_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row1_2",
+			"active": true,
+			"transform": {
+				"position": [ -118.100, 13.800, 15.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Vege_Rows_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row1_3",
+			"active": true,
+			"transform": {
+				"position": [ -93.2, 13.800, 15.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ -3.350, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Vege_Rows_02.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_1",
+			"active": true,
+			"transform": {
+				"position": [ -139.7, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_2",
+			"active": true,
+			"transform": {
+				"position": [ -133.500, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_3",
+			"active": true,
+			"transform": {
+				"position": [ -126.800, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_4",
+			"active": true,
+			"transform": {
+				"position": [ -119.900, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_5",
+			"active": true,
+			"transform": {
+				"position": [ -112.900, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_6",
+			"active": true,
+			"transform": {
+				"position": [ -105.200, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_7",
+			"active": true,
+			"transform": {
+				"position": [ -97.900, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_8",
+			"active": true,
+			"transform": {
+				"position": [ -89.600, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_9",
+			"active": true,
+			"transform": {
+				"position": [ -81.600, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_10",
+			"active": true,
+			"transform": {
+				"position": [ -73.800, 13.800, 17.5 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_11",
+			"active": true,
+			"transform": {
+				"position": [ -139.7, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_12",
+			"active": true,
+			"transform": {
+				"position": [ -133.500, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_13",
+			"active": true,
+			"transform": {
+				"position": [ -126.800, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_14",
+			"active": true,
+			"transform": {
+				"position": [ -119.900, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_15",
+			"active": true,
+			"transform": {
+				"position": [ -112.900, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_16",
+			"active": true,
+			"transform": {
+				"position": [ -105.200, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_17",
+			"active": true,
+			"transform": {
+				"position": [ -97.900, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_18",
+			"active": true,
+			"transform": {
+				"position": [ -89.600, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_19",
+			"active": true,
+			"transform": {
+				"position": [ -81.600, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_20",
+			"active": true,
+			"transform": {
+				"position": [ -73.800, 13.800, 23.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_21",
+			"active": true,
+			"transform": {
+				"position": [ -139.7, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_22",
+			"active": true,
+			"transform": {
+				"position": [ -133.500, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_23",
+			"active": true,
+			"transform": {
+				"position": [ -126.800, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_24",
+			"active": true,
+			"transform": {
+				"position": [ -119.900, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_25",
+			"active": true,
+			"transform": {
+				"position": [ -112.900, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_26",
+			"active": true,
+			"transform": {
+				"position": [ -105.200, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_27",
+			"active": true,
+			"transform": {
+				"position": [ -97.900, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_28",
+			"active": true,
+			"transform": {
+				"position": [ -89.600, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_29",
+			"active": true,
+			"transform": {
+				"position": [ -81.600, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_30",
+			"active": true,
+			"transform": {
+				"position": [ -73.800, 13.800, 27.600 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_31",
+			"active": true,
+			"transform": {
+				"position": [ -139.7, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_32",
+			"active": true,
+			"transform": {
+				"position": [ -133.500, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_33",
+			"active": true,
+			"transform": {
+				"position": [ -126.800, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_34",
+			"active": true,
+			"transform": {
+				"position": [ -119.900, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_35",
+			"active": true,
+			"transform": {
+				"position": [ -112.900, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_36",
+			"active": true,
+			"transform": {
+				"position": [ -105.200, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_37",
+			"active": true,
+			"transform": {
+				"position": [ -97.900, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_38",
+			"active": true,
+			"transform": {
+				"position": [ -89.600, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_39",
+			"active": true,
+			"transform": {
+				"position": [ -81.600, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "crops_row2_40",
+			"active": true,
+			"transform": {
+				"position": [ -73.800, 13.800, 33.400 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Hemp_01_L.obj",
+					"materialName": "materials/leaves.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "planter",
+			"active": true,
+			"transform": {
+				"position": [ -114.700, 13.800, 64.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Veh_Attach_Planter_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "tractor",
+			"active": true,
+			"transform": {
+				"position": [ -108.700, 13.800, 64.300 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 90, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Veh_TractorOld_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "mailbox",
+			"active": true,
+			"transform": {
+				"position": [ -106.800, 13.800, -29.300 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_LetterBox_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "rocking_chair",
+			"active": true,
+			"transform": {
+				"position": [ -103.200, 16.200, -38.800 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, -13.000, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Prop_Chair_Rocking_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "grass_patch_1",
+			"active": true,
+			"transform": {
+				"position": [ -163.300, 13.800, -26.300 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, -13.000, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Gerneric_Grass_Patch_03.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "grass_patch_2",
+			"active": true,
+			"transform": {
+				"position": [ -170.400, 13.800, 16.100 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, -13.000, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Gerneric_Grass_Patch_03.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "apple_tree",
+			"active": true,
+			"transform": {
+				"position": [ -80.800, 14.200, -25.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, -13.000, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/obj/SM_Env_Tree_Apple_Grown_01.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "pond_nb",
+			"active": true,
+			"transform": {
+				"position": [ -14.900, 14.200, -180.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 38, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/PondNoBrim.obj",
+					"materialName": "materials/reflection.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "pond_b",
+			"active": true,
+			"transform": {
+				"position": [ -14.900, 14.200, -180.200 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 38, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/PondNoHat.obj",
+					"materialName": "farm/farm.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "outdoor_light1",
+			"active": true,
+			"transform": {
+				"position": [ -123.2, 14.200, -29.3 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 38, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/SM_Prop_Outdoor_Light_02.obj",
+					"materialName": "materials/town.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "outdoor_light2",
+			"active": true,
+			"transform": {
+				"position": [ -108, 14.200, -29.3 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 38, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/SM_Prop_Outdoor_Light_02.obj",
+					"materialName": "materials/town.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "outdoor_light3",
+			"active": true,
+			"transform": {
+				"position": [ -169.6, 14.500, 23.9 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 38, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/SM_Prop_Outdoor_Light_02.obj",
+					"materialName": "materials/town.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "outdoor_light4",
+			"active": true,
+			"transform": {
+				"position": [ -169.6, 15.3, 44.8 ],
+				"scale": [ 0.050, 0.050, 0.050 ],
+				"rotation": [ 0, 38, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "farm/SM_Prop_Outdoor_Light_02.obj",
+					"materialName": "materials/town.mtrl"
+				}
+			]
+		}
+	]
+}

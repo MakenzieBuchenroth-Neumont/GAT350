@@ -1,0 +1,12 @@
+{
+  "program": "shaders/skybox.prog",
+  "cubemap": "day_skybox_cubemap",
+  "cubemaps": [
+    "textures/day_skybox/posx.jpg",
+    "textures/day_skybox/negx.jpg",
+    "textures/day_skybox/posy.jpg",
+    "textures/day_skybox/negy.jpg",
+    "textures/day_skybox/posz.jpg",
+    "textures/day_skybox/negz.jpg"
+  ]
+}

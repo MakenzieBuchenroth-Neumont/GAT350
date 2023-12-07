@@ -56,6 +56,9 @@
     <Filter Include="Shaders\cel">
       <UniqueIdentifier>{48f10568-64b9-49a9-8406-654fb644396f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Materials\foxy">
+      <UniqueIdentifier>{e1badbfe-09ce-4fac-83e4-5adc11eb2440}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -113,9 +116,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Build\Assets\Materials\foxy.mtrl">
-      <Filter>Materials</Filter>
-    </None>
     <None Include="..\..\Build\Assets\Materials\grid.mtrl">
       <Filter>Materials</Filter>
     </None>
@@ -275,12 +275,6 @@
     <None Include="..\..\Build\Assets\Materials\postprocess.mtrl">
       <Filter>Materials</Filter>
     </None>
-    <None Include="..\..\Build\Assets\Materials\foxy_endo.mtrl">
-      <Filter>Materials</Filter>
-    </None>
-    <None Include="..\..\Build\Assets\Materials\foxy_eye.mtrl">
-      <Filter>Materials</Filter>
-    </None>
     <None Include="..\..\Build\Assets\Scenes\sceneShadow.json">
       <Filter>Scenes</Filter>
     </None>
@@ -316,6 +310,39 @@
     </None>
     <None Include="..\..\Build\Assets\Scenes\sceneCel.json">
       <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\ui_camera.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\basic.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_editor.json">
+      <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\foxy.mtrl">
+      <Filter>Materials\foxy</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\foxy_endo.mtrl">
+      <Filter>Materials\foxy</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\foxy_eye.mtrl">
+      <Filter>Materials\foxy</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\sceneFinal.json">
+      <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\skybox3.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Farm\farm.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\leaves.mtrl">
+      <Filter>Materials</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\town.mtrl">
+      <Filter>Materials</Filter>
     </None>
   </ItemGroup>
 </Project>

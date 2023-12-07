@@ -1,0 +1,24 @@
+{
+  "program": "shaders/lit_phong_normal.prog",
+  "albedoTexture": "farm/textures/Leaves_Diff.tga",
+  "emissiveTexture": "farm/textures/PolygonFarm_Texture_Emissive_01.png",
+  "normalTexture": "farm/textures/Leaves_Normals.png",
+  "albedo": [
+    1,
+    1,
+    1
+  ],
+  "specular": [
+    0.4,
+    0.4,
+    0.4
+  ],
+  "emissive": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "shininess": 60,
+  "tiling": [ 1, 1 ],
+  "offset": [ 0, 0 ]
+}

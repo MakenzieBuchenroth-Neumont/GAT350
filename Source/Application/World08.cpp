@@ -13,7 +13,7 @@ namespace nc
     bool World08::Initialize() {
         
         m_scene = std::make_unique<Scene>();
-        m_scene->Load("Scenes/sceneCel.json");
+        m_scene->Load("Scenes/sceneFinal.json");
         m_scene->Initialize();
 
         m_editor = std::make_unique<Editor>();
@@ -53,6 +53,7 @@ namespace nc
 
         m_scene->Update(dt);
 
+        m_editor->update();
         m_editor->proccessGui(m_scene.get());
 
         ImGui::Begin("Cel");

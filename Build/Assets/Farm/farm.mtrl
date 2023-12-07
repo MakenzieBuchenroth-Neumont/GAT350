@@ -1,0 +1,17 @@
+{
+  "program": "shaders/lit_phong.prog",
+  "albedoTexture": "farm/textures/PolygonFarm_Texture_03_B.png",
+  "albedo": [
+    1,
+    1,
+    1
+  ],
+  "specular": [
+    0,
+    0,
+    0
+  ],
+  "shininess": 60,
+  "tiling": [ 1, 1 ],
+  "offset": [ 0, 0 ]
+}
